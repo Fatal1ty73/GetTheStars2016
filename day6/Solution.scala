@@ -606,4 +606,10 @@ def findMax(string: String) = {
   string.groupBy(c ⇒ c).maxBy(c ⇒ c._2.length)._1
 }
 
-transposeWords.map(findMax).mkString("")
+def findMin(string: String) = {
+  string.groupBy(c ⇒ c).minBy(c ⇒ c._2.length)._1
+}
+
+val firstStar = transposeWords.map(findMax).mkString("")
+
+val secondStar = transposeWords.map(findMin).mkString("")
