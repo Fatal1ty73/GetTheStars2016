@@ -596,21 +596,11 @@ val x =
     |udnnmvxk
     |albkdbsh
     |obxcrucu
-    |dnyytrcx
-  """.stripMargin
+    |dnyytrcx""".stripMargin
 
-val listWords = x.split("\n").toList.map(str ⇒ str.toCharArray.toList)
+val listWords = x.trim.split("\n").toList.map(str ⇒ str.toCharArray.toList)
 
-def transpose[A](xs: List[List[A]]): List[List[A]] = xs.filter(_.nonEmpty) match {
-  case Nil => Nil
-  case ys: List[List[A]] => ys.map {
-    _.head
-  } :: transpose(ys.map {
-    _.tail
-  })
-}
-
-val transposeWords = transpose(listWords).map(x ⇒ x.mkString(""))
+val transposeWords = listWords.transpose.map(x ⇒ x.mkString(""))
 
 def findMax(string: String) = {
   string.groupBy(c ⇒ c).maxBy(c ⇒ c._2.length)._1
