@@ -1,3 +1,3 @@
 # getthestars
-Solution adventofcode
+Solution adventofcode 2016
 https://adventofcode.com/2016
